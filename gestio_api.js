@@ -8,15 +8,14 @@ fetch("http://localhost:3000/productos")
 /* I add the product "Monitor" with the method "POST" */
 const nuevoProducto = { id: 4, nombre: "Monitor", precio: 30000 };
 if (validarProducto(nuevoProducto)) {
-
-  fetch("http://localhost:3000/productos", {
-    method: "POST",
-    headers: { "Content-Type": "aplication/json" },
-    body: JSON.stringify(nuevoProducto),
-  })
-    .then((response) => response.json())
-    .then((data) => console.log("Preductos agregados:", data))
-    .catch((error) => console.error("Error al agregar producto:", error));
+    fetch("http://localhost:3000/productos", {
+      method: "POST",
+      headers: { "Content-Type": "aplication/json" },
+      body: JSON.stringify(nuevoProducto),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("Preductos agregados:", data))
+      .catch((error) => console.error("Error al agregar producto:", error));
 }
 
 
